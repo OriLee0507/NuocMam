@@ -1,106 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shop Nước Mắm</title>
+  <title>Shopi - Trang chủ</title>
   <style>
     body {
-      background: #f5f5f5;
       font-family: Arial;
-      text-align: center;
       margin: 0;
+      background: #fffdf5;
     }
 
-    h1 {
-      background: orange;
-      color: white;
-      padding: 20px;
-      margin: 0;
-    }
-
-    .container {
+    header {
+      background: #ffd54f;
+      padding: 15px;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
-    .product {
-      background: white;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 20px;
-      width: 220px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    a {
+      text-decoration: none;
+      color: black;
+      margin: 0 10px;
     }
 
-    img {
-      width: 120px;
-      height: auto;
-    }
-
-    button {
-      background: orange;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    .cart {
-      background: white;
-      margin: 20px;
-      padding: 15px;
-      border-radius: 10px;
-      width: 300px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .content {
+      padding: 40px;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>🛒 SHOP NƯỚC MẮM</h1>
-
-  <div class="container">
-
-    <div class="product">
-      <img src="images/mam1.jpg">
-      <h3>Nam Ngư</h3>
-      <p>30.000đ</p>
-      <button onclick="addToCart('Nam Ngư', 30000)">Mua</button>
-    </div>
-
-    <div class="product">
-      <img src="images/mam2.jpg">
-      <h3>Thái Long</h3>
-      <p>50.000đ</p>
-      <button onclick="addToCart('Thái Long', 50000)">Mua</button>
-    </div>
-
+<header>
+  <div><b>SHOPI</b></div>
+  <div>
+    <a href="index.html">Trang chủ</a>
+    <a href="products.html">Sản phẩm</a>
   </div>
+</header>
 
-  <div class="cart">
-    <h2>🧾 Giỏ hàng</h2>
-    <ul id="cart-list"></ul>
-    <h3>Tổng: <span id="total">0</span>đ</h3>
-  </div>
-
-  <script>
-    let total = 0;
-
-    function addToCart(name, price) {
-      let cartList = document.getElementById("cart-list");
-
-      let li = document.createElement("li");
-      li.innerText = name + " - " + price + "đ";
-      cartList.appendChild(li);
-
-      total += price;
-      document.getElementById("total").innerText = total;
-    }
-  </script>
+<div class="content">
+  <h1>Chào mừng đến với SHOPI</h1>
+  <p>Chuyên cung cấp nước mắm chất lượng cao</p>
+</div>
 
 </body>
 </html>

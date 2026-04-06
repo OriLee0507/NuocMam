@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sản phẩm</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #fffdf5;
+    }
+
+    header {
+      background: #ffd54f;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      margin: 0 10px;
+    }
+
+    .cart-icon {
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px;
+      width: 220px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    img {
+      width: 120px;
+    }
+
+    button {
+      background: #ffd54f;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .cart-box {
+      position: fixed;
+      right: 10px;
+      top: 70px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      width: 250px;
+      display: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div><b>SHOPI</b></div>
+  <div>
+    <a href="index.html">Trang chủ</a>
+    <a href="products.html">Sản phẩm</a>
+    <span class="cart-icon" onclick="toggleCart()">🛒</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="product">
+    <img src="images/mam1.jpg">
+    <h3>Nam Ngư</h3>
+    <p>30.000đ</p>
+    <button onclick="addToCart('Nam Ngư', 30000)">Mua</button>
+  </div>
+
+  <div class="product">
+    <img src="images/mam2.jpg">
+    <h3>Thái Long</h3>
+    <p>50.000đ</p>
+    <button onclick="addToCart('Thái Long', 50000)">Mua</button>
+  </div>
+
+</div>
+
+<div class="cart-box" id="cart">
+  <h3>Giỏ hàng</h3>
+  <ul id="cart-list"></ul>
+  <p>Tổng: <span id="total">0</span>đ</p>
+</div>
+
+<script>
+  let total = 0;
+
+  function addToCart(name, price) {
+    let li = document.createElement("li");
+    li.innerText = name + " - " + price + "đ";
+    document.getElementById("cart-list").appendChild(li);
+
+    total += price;
+    document.getElementById("total").innerText = total;
+  }
+
+  function toggleCart() {
+    let cart = document.getElementById("cart");
+    cart.style.display = cart.style.display === "none" ? "block" : "none";
+  }
+</script>
+
+</body>
+</html>
