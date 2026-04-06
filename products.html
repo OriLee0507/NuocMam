@@ -26,6 +26,19 @@
     .cart-icon {
       cursor: pointer;
       font-size: 20px;
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+      display: none;
     }
 
     .container {
@@ -53,6 +66,9 @@
       padding: 10px;
       cursor: pointer;
       border-radius: 5px;
+      color: black; /* chữ đen */
+      margin: 5px 0;
+      width: 100%;
     }
 
     .cart-box {
@@ -76,7 +92,9 @@
   <div>
     <a href="index.html">Trang chủ</a>
     <a href="products.html">Sản phẩm</a>
-    <span class="cart-icon" onclick="toggleCart()">🛒</span>
+    <span class="cart-icon" onclick="toggleCart()">🛒
+      <span class="cart-count" id="cart-count">0</span>
+    </span>
   </div>
 </header>
 
@@ -86,14 +104,16 @@
     <img src="images/mam1.jpg">
     <h3>Nam Ngư</h3>
     <p>30.000đ</p>
-    <button onclick="addToCart('Nam Ngư', 30000)">Mua</button>
+    <button onclick="buyNow('Nam Ngư', 30000)">Mua</button>
+    <button onclick="addToCart('Nam Ngư', 30000)">Thêm vào giỏ hàng</button>
   </div>
 
   <div class="product">
     <img src="images/mam2.jpg">
     <h3>Thái Long</h3>
     <p>50.000đ</p>
-    <button onclick="addToCart('Thái Long', 50000)">Mua</button>
+    <button onclick="buyNow('Thái Long', 50000)">Mua</button>
+    <button onclick="addToCart('Thái Long', 50000)">Thêm vào giỏ hàng</button>
   </div>
 
 </div>
@@ -106,14 +126,30 @@
 
 <script>
   let total = 0;
+  let itemCount = 0;
 
   function addToCart(name, price) {
+    // Thêm vào giỏ
     let li = document.createElement("li");
     li.innerText = name + " - " + price + "đ";
     document.getElementById("cart-list").appendChild(li);
 
     total += price;
     document.getElementById("total").innerText = total;
+
+    // Cập nhật số lượng
+    itemCount++;
+    const cartCount = document.getElementById("cart-count");
+    cartCount.innerText = itemCount > 99 ? "99+" : itemCount;
+    cartCount.style.display = "inline";
+
+    // Thông báo
+    alert("Đã thêm " + name + " vào giỏ hàng!");
+  }
+
+  function buyNow(name, price) {
+    alert("Bạn vừa mua: " + name + " - " + price + "đ");
+    // Có thể thêm logic thanh toán ở đây
   }
 
   function toggleCart() {
