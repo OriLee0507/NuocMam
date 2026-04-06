@@ -41,8 +41,8 @@
     .main-content {
       display: flex;
       max-width: 1400px;
-      margin: 40px auto;
-      gap: 20px;
+      margin: 20px auto 40px auto; /* giảm margin-top từ 40px → 20px để xích lên */
+      gap: 15px;
       padding: 0 20px;
       align-items: flex-start;
     }
@@ -57,7 +57,7 @@
 
     .sidebar img {
       width: 100%;
-      max-width: 300px;
+      max-width: 450px; /* poster to hơn */
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
@@ -66,7 +66,7 @@
     .intro-section {
       flex: 2;
       background: #fff8e1;
-      padding: 40px 20px;
+      padding: 30px 20px; /* giảm padding-top từ 40px → 30px */
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
       line-height: 1.6;
@@ -101,7 +101,7 @@
         justify-content: center;
       }
       .sidebar img {
-        max-width: 200px;
+        max-width: 300px;
       }
       .intro-section {
         width: 100%;
@@ -142,7 +142,7 @@
   <div class="main-content">
     <!-- Sidebar trái -->
     <div class="sidebar">
-      <img src="images/standeeDoAn.jpg" alt="Standee Nước Mắm Mộc Ngư">
+      <img src="images/poster.jpg" alt="Poster Nước Mắm Mộc Ngư">
     </div>
 
     <!-- Nội dung chính -->
@@ -164,11 +164,6 @@
         <li><b>Bản sắc Việt:</b> Lồng ghép những giá trị văn hóa, hình ảnh làng nghề vào từng sản phẩm, từng câu chuyện.</li>
         <li><b>Bền vững:</b> Phát triển gắn liền với bảo vệ môi trường biển và nâng cao đời sống ngư dân.</li>
       </ul>
-    </div>
-
-    <!-- Sidebar phải -->
-    <div class="sidebar">
-      <img src="images/poster.jpg" alt="Poster Nước Mắm Mộc Ngư">
     </div>
   </div>
 
