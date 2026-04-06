@@ -129,23 +129,20 @@
   let itemCount = 0;
 
   function addToCart(name, price) {
-    // Thêm vào giỏ
-    let li = document.createElement("li");
-    li.innerText = name + " - " + price + "đ";
-    document.getElementById("cart-list").appendChild(li);
+  let li = document.createElement("li");
+  li.innerText = name + " - " + price.toLocaleString('vi-VN') + "đ"; // 30.000đ
+  document.getElementById("cart-list").appendChild(li);
 
-    total += price;
-    document.getElementById("total").innerText = total;
+  total += price;
+  document.getElementById("total").innerText = total.toLocaleString('vi-VN') + "đ";
 
-    // Cập nhật số lượng
-    itemCount++;
-    const cartCount = document.getElementById("cart-count");
-    cartCount.innerText = itemCount > 99 ? "99+" : itemCount;
-    cartCount.style.display = "inline";
+  itemCount++;
+  const cartCount = document.getElementById("cart-count");
+  cartCount.innerText = itemCount > 99 ? "99+" : itemCount;
+  cartCount.style.display = "inline";
 
-    // Thông báo
-    alert("Đã thêm " + name + " vào giỏ hàng!");
-  }
+  alert("Đã thêm " + name + " vào giỏ hàng!");
+}
 
   function buyNow(name, price) {
     alert("Bạn vừa mua: " + name + " - " + price + "đ");
